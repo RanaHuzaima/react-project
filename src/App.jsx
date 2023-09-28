@@ -23,6 +23,8 @@ function App() {
   }, [length,numAllow,charAllow,setPassword]);
   // Make Copy Function
   const copyPassword = useCallback(()=>{
+    passwordRef.current?.select();
+    passwordRef.current?.setSelectionRange(0, 20);
     window.navigator.clipboard.writeText(password);
   },[password])
   // UseEffect Hook for call
