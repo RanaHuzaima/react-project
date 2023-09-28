@@ -26,8 +26,9 @@ h1{
   margin-top: -15px;
 }
 .div {
-  height: 250px;
-  width: 500px;
+  position: relative;
+  height: auto;
+  width: auto;
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(192, 161, 161, 0.37);
   backdrop-filter: blur(4px);
@@ -80,4 +81,19 @@ button{
 }
 button:hover {
   background: linear-gradient(to left, #2c5364 0%, #203a43 50%, #0f2027 100%);
+}
+.copy_logo{
+  position: absolute;
+  left: 93%;
+  top: 64px;
+  color: black;
+  font-size: 23px;
+  cursor: pointer;
+}
+.reload_logo{
+  position: absolute;
+  left: 88%;
+  top: 64px;
+  font-size: 23px;
+  cursor: pointer;
 }
