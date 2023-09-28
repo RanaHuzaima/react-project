@@ -1,13 +1,10 @@
-import { useState } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import './index.css'
-import { useRef } from 'react';
-import { useCallback } from 'react';
-import { useEffect } from 'react';
 function App() {
   const [password , setpassword] = useState("")
-  const [length , setLength] = useState("8")
-  const [number , setNumber] = useState("")
-  const [char , setChar] = useState("")
+  const [length , setLength] = useState(8)
+  const [numAllow , setnumAllow] = useState(false)
+  const [char , setChar] = useState(false)
   function gernator(){
     let pass = "";
     let str = "abcdefghijklmnopqrstuvwxyz";
@@ -17,6 +14,7 @@ function App() {
 
   return (
     <div  className="div">
+      <h1>Password Generator</h1>
     <input className='input' type="text" readOnly placeholder="Password"/>
     <div className="div-2">
     <input type="range" min="1" max="99" /><label>{length}</label>
