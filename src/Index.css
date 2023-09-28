@@ -38,10 +38,10 @@ body {
 .div-2 {
   display: flex;
   align-items: center;
-  gap: 3px;
-  margin-top: 10px;
+  gap: 5px;
+  margin-top: 10px
 }
-input{
+.input{
   font-size: 17px;
   border-radius: 6px;
   line-height: 1.5;
@@ -52,6 +52,21 @@ input{
   background: #dee1e2;
   height: 40px;
 }
-input:hover {
+.input:hover {
   border-color: #ccc;
+}
+button{
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 14px 24px;
+  margin-top: 10px;
+  border: none;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+  background: linear-gradient(to right, #2c5364 0%, #203a43 50%, #0f2027 100%);
+  color: #fff;
 }
