@@ -12,7 +12,7 @@ function App() {
   // UseRef Hook
   const passwordRef = useRef(null);
   // Make PassGernator function
-  const passGernator = useCallback(() => {
+  const passGenerator = useCallback(() => {
     let pass = "";
     let str = "";
     if(uppcase) str += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -34,8 +34,8 @@ function App() {
   }, [password]);
   // UseEffect Hook for call
   useEffect(() => {
-    passGernator();
-  }, [length, numAllow, charAllow, passGernator,lowcase,uppcase]);
+    passGenerator();
+  }, [length, numAllow, charAllow, passGenerator,lowcase,uppcase]);
   return (
     <div className="div">
       <h1>Password Generator App</h1>
@@ -47,7 +47,7 @@ function App() {
         ref={passwordRef}
         placeholder="Password"
       /><i className="copy_logo" onClick={copyPassword} ><AiFillCopy/></i>
-       <i className="reload_logo" onClick={passGernator} ><AiOutlineReload/></i>
+       <i className="reload_logo" onClick={passGenerator} ><AiOutlineReload/></i>
       <div className="div-2">
         <input
           type="range"
