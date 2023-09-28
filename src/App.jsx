@@ -16,7 +16,10 @@ function App() {
       pass += str.charAt(char)
     }
     setPassword(pass)
-  }, [length,numAllow,charAllow,setPassword])
+  }, [length,numAllow,charAllow,setPassword]);
+  useEffect(function on(){
+    gernator();
+  },[length,numAllow,charAllow,setPassword]);
 
   return (
     <div  className="div">
@@ -24,8 +27,8 @@ function App() {
     <input className='input' value={password} type="text" readOnly placeholder="Password"/>
     <div className="div-2">
     <input type="range" min="8" max="99" value={length} onChange={(e)=>{ setLength(e.target.value)}} /><label>{length}</label>
-    <input type="checkbox" defaultChecked={numAllow} onChange={()=>{ setnumAllow((prev)=> !prev)}} /><label>Number</label>
-    <input type="checkbox" /><label>characters</label>
+    <input type="checkbox" id="numInput" defaultChecked={numAllow} onChange={()=>{ setnumAllow((prev)=> !prev)}} /><label htmlFor="numInput">Number</label>
+    <input type="checkbox" defaultChecked={charAllow} onChange={()=>{setCharAllow ((prev)=>!prev)}} /><label>characters</label>
 </div>
     <button>Copy</button>
 </div>
