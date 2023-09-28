@@ -7,6 +7,7 @@ function App() {
   const [numAllow , setnumAllow] = useState(false)
   const [charAllow , setCharAllow] = useState(false)
   // UseRef Hook
+  const passwordRef = useRef(null)
   // Make PassGernator function
   const passGernator = useCallback(()=>{
     let pass = "";
@@ -20,7 +21,10 @@ function App() {
     }
     setPassword(pass)
   }, [length,numAllow,charAllow,setPassword]);
-
+  // Make Copy Function
+  const copyPassword = useCallback(()=>{
+    window.navigator.clipboard.writeText(password);
+  },[password])
   // UseEffect Hook for call
   useEffect(()=>{
     passGernator();
@@ -28,13 +32,13 @@ function App() {
   return (
     <div  className="div">
       <h1>Password Generator App</h1>
-    <input className='input' value={password} type="text" readOnly placeholder="Password"/>
+    <input className='input' value={password} type="text" readOnly ref={passwordRef} placeholder="Password"/>
     <div className="div-2">
     <input type="range" min="8" max="99" value={length} onChange={(e)=>{ setLength(e.target.value)}} /><label>{length}</label>
     <input type="checkbox" id="numInput" defaultChecked={numAllow} onChange={()=>{ setnumAllow((prev)=> !prev)}} /><label htmlFor="numInput">Number</label>
     <input type="checkbox" id="charInput" defaultChecked={charAllow} onChange={()=>{setCharAllow ((prev)=>!prev)}} /><label htmlFor='charInput'>characters</label>
 </div>
-    <button>Copy</button>
+    <button onClick={copyPassword}>Copy</button>
 </div>
   )
 }

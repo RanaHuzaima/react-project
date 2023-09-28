@@ -78,3 +78,6 @@ button{
   background: linear-gradient(to right, #2c5364 0%, #203a43 50%, #0f2027 100%);
   color: #fff;
 }
+button:hover {
+  background: linear-gradient(to left, #2c5364 0%, #203a43 50%, #0f2027 100%);
+}
